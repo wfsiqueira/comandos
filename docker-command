@@ -32,6 +32,7 @@ docker restart – Restarta um container que está rodando ou parado.
 docker rm      – Remove um ou mais containeres.
 docker rmi     – Remove uma ou mais imagens.
 docker run     – Executa um comando em um novo container.
+docker run -it – Executa um comando em um novo container e abre uma sessão interativa
 docker save    – Salva a imagem em um arquivo .tar.
 docker search  – Procura por uma imagem no Docker Hub.
 docker service – Gernciamento dos serviços do Docker.
