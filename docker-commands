@@ -1,0 +1,34 @@
+docker exec -it -u <use> <name_container> bash
+docker exec -it <name_container> bash
+# insira um conteúdo específico do docker
+
+docker-compose up -d
+# carregar todos os contêineres do Docker
+
+docker-compose stop
+# pare todos os contêineres do docker
+
+docker rm <name_container>
+# remover um contêiner do docker específico
+
+docker rm -f $(docker ps -a -q)
+docker rm -f $(docker ps -qa)
+# remova todos os contêineres
+
+docker ps -a
+# lista todos os contêineres do docker com ID, imagem (local), comando, criado, status, portas, nomes
+
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+# remover imagens de órfãos
+
+docker rm $(docker ps -qa -f status=exited)
+# remova apenas os contêineres encerrados
+
+docker rmi -f $(docker images | awk '{print $3, $8}')
+# remover todas as imagens
+
+docker history <name_container> | awk 'NR>1 {print $1}' | xargs docker inspect --format '{{ ((index .ContainerConfig.Cmd ) 0) }}'
+# inspecionar uma imagem
+
+docker stop $(docker ps -q); docker rm $(docker ps -a -q); docker volume rm $(docker volume ls -q); docker rmi $(docker images -q); docker network rm $(docker network ls -q);
+# comando docker para limpar tudo

@@ -1,0 +1,46 @@
+$ git commit -am "Something message important here"
+# Para confirmar e adicionar arquivos alterados.
+
+$ git add
+# Para adicionar novos arquivos ao git.
+
+$ git log 
+# Para verificar o histórico de alterações registradas no repositório.
+
+$ git log -n 2
+# Este comando mostra os dois últimos commits.
+
+$ git log --oneline
+# Para mostrar um resumo de todas as confirmações no projeto.
+
+$ git log --stat
+# Para mostrar um resumo de todas as alterações no projeto, este comando mostra todas as linhas que foram adicionadas e removidas.
+
+$ git log -n 2 --oneline --stat
+# Este é um exemplo de comandos combinados.
+
+############## BRANCHES ##################
+
+$ git brach
+# Para listar todas as ramificações em seu repositório, ordenadas por nome
+
+$ git branch <nome_branch>
+# Crie um novo branch local
+
+$ git push origin <nome_branch>:<nome_branch>
+# Cire um novo branch remoto
+
+$ git branch -d <nome_branch>
+# Deletar um branch local
+
+$ git push origin :<nome_branch>
+# Deletar um branch remoto
+
+$ git checkout -t origin/<nome_branch>
+# Este comando puxa o branch remoto para local e faz checkout da branch que você deseja usar
+
+$ git branch | egrep "<condition in a regular expression>" | xargs git branch -d
+# Este comando exclui muitos branchs locais, usando expressões regulares
+
+git branch -vv | grep ': gone' | awk '{print $1}' | xargs git branch -d
+# Outro comando para excluir muitos branchs locais, se o branch não estiver totalmente mesclada, usando git branch -D
