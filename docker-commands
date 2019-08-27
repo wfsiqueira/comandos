@@ -8,6 +8,15 @@ docker cp <arquivo> <name_container>:<pasta>
 docker system df
 # Verificar espaço em disco dos containers e imagens
 
+docker network create --driver bridge --subnet=192.168.0.0/24 --gateway=192.168.0.1 redelocal
+# Criar rede no docker
+
+docker inspect <nome_container> | grep "IPAddress"
+# Verificar IP Local do container
+
+docker run -dt --network=<nome_rede> --ip=<endereco_ip> <imagem>
+# Vincular container a uma rede
+
 docker export <container> > <arquivo.tar>
 # Realizar o backup do container
 
