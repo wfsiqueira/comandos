@@ -1,6 +1,10 @@
 docker exec -it -u <use> <name_container> bash
 docker exec -it <name_container> bash
-# insira um conteúdo específico do docker
+# Acessar um container
+
+docker cp <arquivo> <name_container>:<pasta>
+docker cp apply_pattern.sh nxfilter:/scripts/
+# Copiar aquivos do host para o container ou vice-versa
 
 docker-compose up -d
 # carregar todos os contêineres do Docker
