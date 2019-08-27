@@ -3,8 +3,25 @@ docker exec -it <name_container> bash
 # Acessar um container
 
 docker cp <arquivo> <name_container>:<pasta>
-docker cp apply_pattern.sh nxfilter:/scripts/
 # Copiar aquivos do host para o container ou vice-versa
+
+docker system df
+# Verificar espaço em disco dos containers e imagens
+
+docker export <container> > <arquivo.tar>
+# Realizar o backup do container
+
+docker import <arquivo.tar> <nome_da_imagem>:<tag>
+docker run -it <nome_container> /bin/bash
+# Realizar o restore dos containers
+
+docker commit <nome_container> <nome_da_imagem>:<tag>
+docker save <nome_da_imagem>:<tag> > <arquivo.tar>
+# Realizar o backup do container (Preserva todas as configurações da imagem)
+
+docker load < <arquivo.tar>
+docker run -dit --name <nome_container> <nome_da_imagem>:<tag>
+# Realizar o restore dos containers (Preserva todas as configurações da imagem)
 
 docker-compose up -d
 # carregar todos os contêineres do Docker
