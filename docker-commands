@@ -48,6 +48,16 @@ docker rm -f $(docker ps -qa)
 docker ps -a
 # lista todos os contêineres do docker com ID, imagem (local), comando, criado, status, portas, nomes
 
+docker volume create <nome_volume>
+# Criar um volume
+
+(Parametro) --mount type=volume,srv=<nome_volume>,dst=<pasta_montagem>
+(Parametro) --volume <nome_volume>:<pasta_montagem>
+# Vincular um volume a um container
+
+docker volume rm <nome_volume>
+# Remover volumes
+
 docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
 # remover imagens de órfãos
 
