@@ -83,3 +83,6 @@ $ git push
 # Baixar arquivos do Github para o reppositorio local
 $ git pull
 
+# Atualizar repositorio local com novas branchs
+$ git fetch -p
+$ git checkout -b <branch>
