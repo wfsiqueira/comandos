@@ -47,13 +47,39 @@ git branch -vv | grep ': gone' | awk '{print $1}' | xargs git branch -d
 
 ############## CURSO GIT ##################
 # Iniciar configurações locais do repositorio
-git init
+$ git init
 
 # Realizar as configuracoes do usuario
-git config --global user.name "Willian Siqueira"
-git config --global user.email "willianfsiqueira@hotmail.com"
+$ git config --global user.name "Willian Siqueira"
+$ git config --global user.email "willianfsiqueira@hotmail.com"
 
 # Verificar as configuracoes do usuario no git
-git config --global -l
+$ git config --global -l
 
-#
+# Para adicionar novos arquivos ao git.
+$ git add
+
+# Verificar o estado dos aquivos no git
+$ git status
+
+# Para verificar o histórico de alterações registradas no repositório
+$ git log
+
+# Para confirmar e adicionar arquivos alterados.
+$ git commit -am "Something message important here"
+
+# Verificar as versoes anteriores de um arquivo
+$ git checkout <id_commit>
+
+# Voltar para a ultima versão de um arquivo
+$ git checkout master
+
+# Clonar repositorios do GitHub
+$ git clone <link_do_repositorio>
+
+# Enviar arquivos do repositorio local para o Github
+$ git push
+
+# Baixar arquivos do Github para o reppositorio local
+$ git pull
+
