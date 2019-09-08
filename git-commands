@@ -44,3 +44,16 @@ $ git branch | egrep "<condition in a regular expression>" | xargs git branch -d
 
 git branch -vv | grep ': gone' | awk '{print $1}' | xargs git branch -d
 # Outro comando para excluir muitos branchs locais, se o branch não estiver totalmente mesclada, usando git branch -D
+
+############## CURSO GIT ##################
+# Iniciar configurações locais do repositorio
+git init
+
+# Realizar as configuracoes do usuario
+git config --global user.name "Willian Siqueira"
+git config --global user.email "willianfsiqueira@hotmail.com"
+
+# Verificar as configuracoes do usuario no git
+git config --global -l
+
+#
