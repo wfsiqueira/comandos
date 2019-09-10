@@ -81,7 +81,24 @@ $ git clone <link_do_repositorio>
 $ git push
 
 # Baixar arquivos do Github para o reppositorio local
-$ git pull
+$ git 
+
+# Criar novas branchs
+$ git branch <nome_da_branch>
+
+# Vrificar branchs existentes
+$ git branch
+
+# Acessar outras branchs
+$ git checkout <nome_da_branch>
+
+# Deletar branch
+$ git branch -d <nome_da_branch>
+
+# Criar e entrar na nova branch
+$ git branch -b <nome_da_branch>
+
+
 
 # Atualizar repositorio local com novas branchs
 $ git fetch -p
