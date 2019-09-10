@@ -98,7 +98,9 @@ $ git branch -d <nome_da_branch>
 # Criar e entrar na nova branch
 $ git branch -b <nome_da_branch>
 
-
+# Realizar merge
+$ git checkout master
+$ git merge <nome_da_branch>
 
 # Atualizar repositorio local com novas branchs
 $ git fetch -p
