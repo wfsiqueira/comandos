@@ -105,3 +105,16 @@ $ git merge <nome_da_branch>
 # Atualizar repositorio local com novas branchs
 $ git fetch -p
 $ git checkout -b <branch>
+
+# Desfazer alterações em arquivos ou diretorios
+$ git checkout <nome_do_arquivo>  ou  git restore <nome_do_arquivo>
+
+# Voltando para o commit anterior, porem mantendo as alterações dos commits
+$ git reset head^
+
+# Voltar para um commit e apagar as alterações do projeto
+$ git reset --hard <commit_que_quer_voltar>
+
+# Fork - Adicionar um repositorio remoto e sincronizar com o repositorio local
+$ git remote add upstream <link_do_repositorio>
+$ git pull upstream master
