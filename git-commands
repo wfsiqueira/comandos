@@ -139,5 +139,3 @@ $ git merge origin/master
 
 # git pull: baixa todos os commits do repositório remoto e ja realiza as alterações no repositorio local
 $ git pull
-
-
