@@ -2,7 +2,6 @@ docker exec -it -u <user> <name_container> bash
 docker exec -it <name_container> bash
 # Acessar um container
 
-
 docker run -dt --name <nome_container> -v <volume> -p <porta_externa>:<porta_interna> <nome_da_imagem>:<tag>
 # Executar um container
 
