@@ -14,11 +14,17 @@ docker system df
 docker network create --driver bridge --subnet=192.168.0.0/24 --gateway=192.168.0.1 redelocal
 # Criar rede no docker
 
+docker run -dit --network=<nome_rede> --ip=<endereco_ip> <imagem>
+# Vincular container a uma rede
+
+docker run -dit --network host <imagem>
+# Compartilhar ip do host com o container
+
+docker network connect <nome_da_rede> <nome_container>
+# Conectar uma nova rede ao container
+
 docker inspect <nome_container> | grep "IPAddress"
 # Verificar IP Local do container
-
-docker run -dt --network=<nome_rede> --ip=<endereco_ip> <imagem>
-# Vincular container a uma rede
 
 docker export <container> > <arquivo.tar>
 # Realizar o backup do container
@@ -61,17 +67,17 @@ docker volume create <nome_volume>
 docker volume rm <nome_volume>
 # Remover volumes
 
-docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
-# remover imagens de órfãos
-
 docker rm $(docker ps -qa -f status=exited)
 # remova apenas os contêineres encerrados
 
-docker rmi -f $(docker images | awk '{print $3, $8}')
+docker rmi -f $(docker images | grep "<none>" | sed "s/\s\+/ /g" | cut -d" " -f3)
+# remover imagens órfãos
+
+docker rmi -f $(docker images | sed "s/\s\+/ /g" | cut -d" " -f3)
 # remover todas as imagens
 
 docker history <name_container> | awk 'NR>1 {print $1}' | xargs docker inspect --format '{{ ((index .ContainerConfig.Cmd ) 0) }}'
 # inspecionar uma imagem
 
-docker stop $(docker ps -q); docker rm $(docker ps -a -q); docker volume rm $(docker volume ls -q); docker rmi $(docker images -q); docker network rm $(docker network ls -q);
+docker stop $(docker ps -q); docker rm $(docker ps -a -q); docker volume rm $(docker volume ls -q); docker rmi -f $(docker images -q); docker network rm $(docker network ls -q);
 # comando docker para limpar tudo
