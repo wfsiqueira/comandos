@@ -110,7 +110,7 @@ $ git checkout -b <branch>
 $ git checkout <nome_do_arquivo>  ou  git restore <nome_do_arquivo>
 
 # Voltando para o commit anterior, porem mantendo as alterações dos commits
-$ git reset head^
+$ git reset --hard HEAD
 
 # Voltar para um commit e apagar as alterações do projeto
 $ git reset --hard <commit_que_quer_voltar>
@@ -126,7 +126,7 @@ $ git checkout master
 $ git merge <nome_da_branch>
 
 # Verificar o log de forma simplificada
-$ git log --oneline --graph
+$ git log --oneline
 
 # Realizar alterações no histórico dos commit com o rebase (Alterar comentarios dos commits)
 $ git rebase -i <commit_pai> 

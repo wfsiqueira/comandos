@@ -1,3 +1,26 @@
+curl -fsSL https://get.docker.com | bash  
+# Install Docker 
+
+CTRL + PQ
+# Sair sem matar o container
+
+docker container start <container_id>
+docker container stop <container_id>
+docker container restart <container_id>
+# Iniciar / Parar / Reiniciar o container
+
+docker container inspect <container_id>
+# Verificar informações do container
+
+docker build -t <nome_da_imagem>:<tag> .
+# Realizar o build do container
+
+docker container attach <container_id>
+# Voltar no container em execução
+
+docker tag 0e5574283393 fedora/httpd:version1.0
+# Criar tag
+
 docker exec -it -u <user> <name_container> bash
 docker exec -it <name_container> bash
 # Acessar um container
@@ -60,7 +83,7 @@ docker ps -a
 docker volume create <nome_volume>
 # Criar um volume
 
-(Parametro) --mount type=volume,srv=<nome_volume>,dst=<pasta_montagem>
+(Parametro) --mount type=volume,src=<nome_volume>,dst=<pasta_montagem>
 (Parametro) --volume <nome_volume>:<pasta_montagem>
 # Vincular um volume a um container
 
