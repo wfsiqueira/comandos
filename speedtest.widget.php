@@ -1,5 +1,9 @@
 <?php
 
+/*
+curl -LJ https://raw.githubusercontent.com/wfsiqueira/comandos/master/speedtest.widget.php -o /usr/local/www/widgets/widgets/speedtest.widget.php
+*/
+
 require_once("guiconfig.inc");
 
 if ($_REQUEST['ajax']) { 
